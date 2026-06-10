@@ -69,7 +69,7 @@
     </div>
   </div>
 
-  <p class="waitlist-hint">Expected price: around CHF 38. Join the waitlist and be the first to know about the launch.</p>
+
 
   <div class="cta-wrap">
     <form action="https://lophi.us17.list-manage.com/subscribe/post?u=5261624546fb04c4567b1ec64&id=d924d58833&f_id=008ac3e3f0" method="post" target="_blank" style="width:100%;">
@@ -135,7 +135,6 @@
 
 <section class="final-cta">
   <h2>Be there when <em>Lophi</em> launches.</h2>
-  <p>Expected price: around CHF 38. Join the waitlist and be the first to know about the launch.</p>
   <div class="cta-wrap">
     <form action="https://lophi.us17.list-manage.com/subscribe/post?u=5261624546fb04c4567b1ec64&id=d924d58833&f_id=008ac3e3f0" method="post" target="_blank" style="width:100%;">
       <div class="cta-form">
@@ -170,6 +169,7 @@
   reveals.forEach(r => obs.observe(r));
 
   const COLS = 8, ROWS = 8, TOTAL = 64;
+  //const CYCLE_MS = 100, TICK_MS = 200, TRAIL = 3;
   const CYCLE_MS = 20000, TICK_MS = 200, TRAIL = 3;
   const PATH = [];
   for (let r = 0; r < ROWS; r++) {
@@ -177,13 +177,14 @@
     else { for (let c = COLS-1; c >= 0; c--) PATH.push(r*COLS+c); }
   }
   const HEART = [[0,1,1,0,0,1,1,0],[1,1,1,1,1,1,1,1],[1,1,1,1,1,1,1,1],[0,1,1,1,1,1,1,0],[0,0,1,1,1,1,0,0],[0,0,0,1,1,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]];
-  const STAR = [[0,0,0,1,1,0,0,0],[0,1,0,1,1,0,1,0],[0,0,1,1,1,1,0,0],[1,1,1,1,1,1,1,1],[1,1,1,1,1,1,1,1],[0,0,1,1,1,1,0,0],[0,1,0,1,1,0,1,0],[0,0,0,1,1,0,0,0]];
+  //const STAR = [[0,0,0,1,1,0,0,0],[0,1,0,1,1,0,1,0],[0,0,1,1,1,1,0,0],[1,1,1,1,1,1,1,1],[1,1,1,1,1,1,1,1],[0,0,1,1,1,1,0,0],[0,1,0,1,1,0,1,0],[0,0,0,1,1,0,0,0]];
   const CAT = [[0,1,0,0,0,0,1,0],[1,1,1,0,0,1,1,1],[1,1,1,1,1,1,1,1],[1,0,1,1,1,1,0,1],[1,1,1,1,1,1,1,1],[1,1,1,0,0,1,1,1],[1,1,1,1,1,1,1,1],[0,0,1,1,1,1,0,0]];
   const SMILEY = [[0,0,0,0,0,0,0,0],[0,1,1,0,0,1,1,0],[0,1,1,0,0,1,1,0],[0,0,0,0,0,0,0,0],[1,0,0,1,1,0,0,1],[0,1,0,0,0,0,1,0],[0,0,1,1,1,1,0,0],[0,0,0,0,0,0,0,0]];
   const ICON1 = [[0,0,0,0,1,1,0,0],[0,0,0,0,0,1,1,1],[0,0,0,0,1,1,1,1],[0,0,0,0,1,1,0,0],[1,1,1,1,1,1,0,0],[1,1,1,1,1,1,0,0],[0,1,0,0,1,0,1,0],[1,0,0,0,1,0,0,1]];
   const ICON2 = [[0,1,0,0,0,0,0,0],[1,1,0,0,0,0,0,0],[1,1,1,1,1,1,0,0],[0,0,1,1,1,1,1,0],[0,0,1,1,1,1,0,1],[0,0,1,0,0,1,0,0],[0,1,0,0,1,1,0,0],[0,0,0,0,0,0,0,0]];
   const ICON3 = [[0,0,1,1,1,1,0,0],[0,1,1,1,1,1,1,0],[1,1,0,1,1,1,0,0],[1,1,1,1,1,0,0,0],[1,1,1,1,0,0,0,1],[1,1,1,1,1,0,0,0],[0,1,1,1,1,1,1,0],[0,0,1,1,1,1,1,0]];
-  const SURPRISES = [HEART, STAR, CAT, SMILEY, ICON1, ICON2, ICON3];
+  const SMILE = [[0,0,1,1,1,1,0,0],[0,1,0,0,0,0,1,0],[1,0,1,0,0,1,0,1],[1,0,0,0,0,0,0,1],[1,0,1,0,0,1,0,1],[1,0,0,1,1,0,0,1],[0,1,0,0,0,0,1,0],[0,0,1,1,1,1,0,0]];
+  const SURPRISES = [HEART, CAT, SMILEY, ICON1, ICON2, ICON3, SMILE];
   let sIdx = 0, headPos = 0, surprise = false;
   const STEPS_PER_TICK = TOTAL / (CYCLE_MS / TICK_MS);
   const GAP_X = 19.250, GAP_Y = 13.625, DOT_R = 5.45;
