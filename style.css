@@ -8,7 +8,7 @@
 html { scroll-behavior: smooth; }
 body { background: var(--bg); font-family: 'DM Sans', sans-serif; color: var(--night); overflow-x: hidden; }
 nav { position: fixed; top: 0; width: 100%; z-index: 100; padding: 18px 40px; display: flex; justify-content: space-between; align-items: center; background: rgba(255,183,3,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.08); }
-.logo { font-size: 1.6rem; font-weight: 900; color: var(--night); letter-spacing: -1px; }
+.logo { font-size: 1.6rem; font-weight: 900; color: var(--night); letter-spacing: -1px; text-decoration: none; }
 .logo span { color: var(--lego-pink); }
 .nav-badge { font-size: 0.82rem; color: white; font-weight: 700; background: var(--lego-pink); padding: 5px 14px; border-radius: 100px; }
 .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 120px 24px 80px; position: relative; overflow: hidden; background: #FFB703; }
@@ -73,6 +73,8 @@ h1 .highlight { color: var(--lego-green); }
 .final-cta { text-align: center; padding: 50px 24px 110px; background: #FFF8E1; }
 .final-cta h2 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; letter-spacing: -1.5px; margin-bottom: 14px; line-height: 1.1; color: var(--night); }
 .final-cta h2 em { font-style: italic; color: var(--lego-green); }
+.final-cta h2 .brand-word { font-style: normal; color: var(--night); }
+.final-cta h2 .brand-dot { color: var(--lego-pink); }
 .final-cta p { color: #555; margin-bottom: 36px; font-size: 1.05rem; font-weight: 500; }
 .final-cta .cta-wrap { margin: 0 auto; }
 footer { background: var(--night); border-top: none; padding: 32px 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 0.85rem; color: #ffffff; }
