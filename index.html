@@ -116,7 +116,7 @@ Last Updated: 2026-06-11
 <section style="background: var(--lego-pink); padding: 70px 24px; text-align: center;">
   <div class="reveal" style="max-width: 680px; margin: 0 auto;">
     <p style="font-size: 0.95rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--lego-yellow); margin-bottom: 16px;">What makes Lophi special</p>
-    <h2 style="font-size: clamp(1.8rem, 4.5vw, 2.6rem); font-weight: 900; color: #fff; line-height: 1.2; margin-bottom: 18px;">A new surprise <span style="color: var(--lego-yellow);">every single time.</span></h2>
+    <h2 class="zoom-in" style="font-size: clamp(1.8rem, 4.5vw, 2.6rem); font-weight: 900; color: #fff; line-height: 1.2; margin-bottom: 18px;">A new surprise <span style="color: var(--lego-yellow);">every single time.</span></h2>
     <p style="font-size: 1.1rem; color: rgba(255,255,255,0.92); line-height: 1.7;">Most timers just count down. Lophi rewards your child at the end with a little animation: a heart, a star, a cat and many more. Never the same twice, so brushing stays exciting day after day.</p>
   </div>
   </div>
@@ -234,10 +234,24 @@ Last Updated: 2026-06-11
 
 <script>
   const reveals = document.querySelectorAll('.reveal');
-  const obs = new IntersectionObserver(entries => {
+  const obsReveal = new IntersectionObserver(entries => {
     entries.forEach((e,i) => { if(e.isIntersecting) setTimeout(()=>e.target.classList.add('visible'),i*80); });
   }, { threshold: 0.12 });
-  reveals.forEach(r => obs.observe(r));
+  reveals.forEach(r => obsReveal.observe(r));
+
+  const zoomEls = document.querySelectorAll('.zoom-in');
+  const obsZoom = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.remove('visible');
+        void e.target.offsetWidth; // reflow to restart animation
+        e.target.classList.add('visible');
+      } else {
+        e.target.classList.remove('visible');
+      }
+    });
+  }, { threshold: 0.2 });
+  zoomEls.forEach(el => obsZoom.observe(el));
 
   const COLS = 8, ROWS = 8, TOTAL = 64;
   //const CYCLE_MS = 100, TICK_MS = 200, TRAIL = 3;
