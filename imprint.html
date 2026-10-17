@@ -1,58 +1,134 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de-CH">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Imprint | Lophi</title>
+<title>Impressum | Lophi</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="img/favicon.ico" sizes="any">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body class="legal-page">
-  <nav>
-    <a class="logo" href="index.html" aria-label="Lophi – back to home">Lophi<span>.</span></a>
-    <div class="nav-badge">Coming soon</div>
-  </nav>
-  <div class="page-wrap">
-    <h1>Imprint</h1>
-
-    <h2>Responsible for this website</h2>
-    <p>
-      Lophi.<br>
-      Zürich, Switzerland
-    </p>
-
-    <h2>Contact</h2>
-    <p>
-      Email: <a href="mailto:info@lophi.ch">info@lophi.ch</a>
-    </p>
-
-    <h2>Design rights</h2>
-    <p>
-      The design of the Lophi Timer is a registered design with the Swiss Federal Institute of
-      Intellectual Property (IGE / IPI).
-    </p>
-
-    <h2>Disclaimer</h2>
-    <p>
-      The author assumes no liability for the correctness, accuracy, timeliness, reliability or
-      completeness of the information provided. Liability claims against the author for material or
-      immaterial damage resulting from access to, use or non-use of the published information are
-      excluded.
-    </p>
-    <p>
-      All offers are non-binding. The author reserves the right to change, supplement or delete parts
-      of the pages or the entire offer without prior notice, or to cease publication temporarily or
-      permanently.
-    </p>
-
-    <h2>Copyright</h2>
-    <p>
-      The copyright and all other rights to content, images, photos or other files on this website
-      belong exclusively to Lophi Timer or the specifically named rights holders. The written consent
-      of the copyright holder must be obtained in advance for the reproduction of any elements.
-    </p>
-
-    <a class="cta-btn" href="index.html">← Back to Lophi</a>
+<!-- ===== NAVIGATION (in der Reihenfolge der Seite) ===== -->
+<nav class="site-nav" aria-label="Hauptnavigation">
+  <a class="logo" href="index.html" aria-label="Lophi, zur Startseite">Lophi<span>.</span></a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMenu" aria-label="Menü öffnen">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-menu" id="navMenu">
+    <a href="index.html#produkt">Produkt</a>
+    <a href="index.html#so-gehts">So geht's</a>
+    <a href="index.html#faq">FAQ</a>
+    <a href="index.html#ueber-uns">Über uns</a>
   </div>
+</nav>
+  <main class="page-wrap">
+    <h1>Impressum</h1>
+
+    <h2>Verantwortlich für diese Website</h2>
+    <p>
+      Lophi<br>
+      Isabelle und Roland Nold<br>
+      Hardturmstrasse 284<br>
+      8005 Zürich<br>
+      Schweiz
+    </p>
+
+    <h2>Kontakt</h2>
+    <p>
+      E-Mail: <a href="mailto:info@lophi.ch">info@lophi.ch</a>
+    </p>
+
+    <h2>Designschutz</h2>
+    <p>
+      Das Design des Lophi Timers ist beim Eidgenössischen Institut für Geistiges Eigentum (IGE)
+      als Design eingetragen.
+    </p>
+
+    <h2>Haftungsausschluss</h2>
+    <p>
+      Wir übernehmen keine Gewähr für die Richtigkeit, Genauigkeit, Aktualität, Zuverlässigkeit und
+      Vollständigkeit der Informationen auf dieser Website. Haftungsansprüche wegen Schäden
+      materieller oder immaterieller Art, die aus dem Zugriff auf, der Nutzung oder Nichtnutzung der
+      veröffentlichten Informationen entstehen, sind ausgeschlossen.
+    </p>
+    <p>
+      Alle Angebote sind unverbindlich. Wir behalten uns ausdrücklich vor, Teile der Seiten oder das
+      gesamte Angebot ohne Ankündigung zu ändern, zu ergänzen, zu löschen oder die Veröffentlichung
+      zeitweise oder endgültig einzustellen.
+    </p>
+
+    <h2>Haftung für Links</h2>
+    <p>
+      Verweise auf Websites Dritter liegen ausserhalb unseres Verantwortungsbereichs. Für deren
+      Inhalte sind ausschliesslich die jeweiligen Betreiber verantwortlich.
+    </p>
+
+    <h2>Urheberrechte</h2>
+    <p>
+      Die Urheber- und alle anderen Rechte an Inhalten, Bildern, Fotos oder anderen Dateien auf
+      dieser Website gehören ausschliesslich Lophi oder den speziell genannten Rechteinhabern. Für
+      die Wiedergabe jeglicher Elemente ist die schriftliche Zustimmung der Rechteinhaber im Voraus
+      einzuholen.
+    </p>
+
+    <a class="cta-btn" href="index.html">← Zurück zu Lophi</a>
+  </main>
+
+<!-- ===== FOOTER (gleich wie auf der Startseite) ===== -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <div class="footer-illustration">
+        <img src="img/favicon.svg" width="64" height="64" alt="Lophi Timer in Bausteinform">
+      </div>
+      <p class="footer-logo">Lophi<span class="brand-dot">.</span></p>
+      <p class="footer-muted">Der Bausteintimer, der Kindern Zeit erklärt.</p>
+    </div>
+
+    <div class="footer-col" id="warteliste">
+      <h3 class="footer-title">Warteliste</h3>
+      <p class="footer-muted">Neuigkeiten direkt in dein Postfach.</p>
+      <form action="https://lophi.us17.list-manage.com/subscribe/post?u=5261624546fb04c4567b1ec64&amp;id=d924d58833&amp;f_id=008ac3e3f0" method="post" target="_blank">
+        <div class="cta-form cta-form--compact">
+          <input type="email" name="EMAIL" placeholder="deine@email.ch" aria-label="Deine E-Mail-Adresse" required>
+          <button type="submit" class="btn btn--primary btn--small">Eintragen</button>
+        </div>
+        <div aria-hidden="true" class="mc-hidden"><input type="text" name="b_5261624546fb04c4567b1ec64_d924d58833" tabindex="-1" value=""></div>
+      </form>
+    </div>
+
+    <div class="footer-col">
+      <h3 class="footer-title">Weitersagen</h3>
+      <p class="footer-muted">Kennst du Eltern, die das brauchen?</p>
+      <div class="share-buttons">
+        <a id="shareWhatsApp" class="btn btn--whatsapp btn--small" href="#" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a id="shareEmail" class="btn btn--green btn--small" href="#">E-Mail</a>
+      </div>
+    </div>
+
+    <div class="footer-col footer-links">
+      <h3 class="footer-title">Kontakt</h3>
+      <a href="mailto:info@lophi.ch">info@lophi.ch</a>
+      <a class="insta" href="https://www.instagram.com/lophi.timer/" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="6" stroke="currentColor" stroke-width="2"/>
+          <circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="2"/>
+          <circle cx="17.5" cy="6.5" r="1.4" fill="currentColor"/>
+        </svg>
+        Instagram
+      </a>
+      <a href="imprint.html">Impressum</a>
+      <a href="privacy.html">Datenschutz</a>
+      <a href="#" data-open-cookies>Cookie-Einstellungen</a>
+    </div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 Lophi · Mit &#8987; gemacht in Z&uuml;rich</div>
+</footer>
+
+<script src="site.js" defer></script>
 </body>
 </html>
