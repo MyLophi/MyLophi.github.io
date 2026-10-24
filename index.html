@@ -77,9 +77,13 @@ Last Updated: 2026-06-12
 
   <p class="waitlist-hint">Join the waitlist and be the first to know about the launch.</p>
   <div class="cta-wrap">
-    <form action="https://lophi.us17.list-manage.com/subscribe/post?u=5261624546fb04c4567b1ec64&id=d924d58833&f_id=008ac3e3f0" method="post" target="_blank" style="width:100%;">
+    <form action="https://lophi.us17.list-manage.com/subscribe/post?u=5261624546fb04c4567b1ec64&id=d924d58833&f_id=008ac3e3f0" method="post" target="_blank" style="width:100%;" class="waitlist-form">
       <div class="cta-form">
         <input type="email" name="EMAIL" placeholder="your@email.com" required />
+        <div class="captcha-container" style="margin-top: 12px; font-size: 14px; color: #333;">
+          <label style="display: block; margin-bottom: 8px;"><span class="captcha-question"></span></label>
+          <input type="text" class="captcha-answer" placeholder="Your answer" inputmode="numeric" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px;" />
+        </div>
         <button type="submit" class="cta-btn">Sign up now</button>
       </div>
       <div aria-hidden="true" class="mc-hidden"><input type="text" name="b_5261624546fb04c4567b1ec64_d924d58833" tabindex="-1" value=""></div>
@@ -178,9 +182,13 @@ Last Updated: 2026-06-12
   <h2>Be there when <span class="brand-word">Lophi<span class="brand-dot">.</span></span> launches.</h2>
   <p>Join the waitlist and be the first to know about the launch.</p>
   <div class="cta-wrap">
-    <form action="https://lophi.us17.list-manage.com/subscribe/post?u=5261624546fb04c4567b1ec64&id=d924d58833&f_id=008ac3e3f0" method="post" target="_blank" style="width:100%;">
+    <form action="https://lophi.us17.list-manage.com/subscribe/post?u=5261624546fb04c4567b1ec64&id=d924d58833&f_id=008ac3e3f0" method="post" target="_blank" style="width:100%;" class="waitlist-form">
       <div class="cta-form">
         <input type="email" name="EMAIL" placeholder="your@email.com" required />
+        <div class="captcha-container" style="margin-top: 12px; font-size: 14px; color: #333;">
+          <label style="display: block; margin-bottom: 8px;"><span class="captcha-question"></span></label>
+          <input type="text" class="captcha-answer" placeholder="Your answer" inputmode="numeric" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px;" />
+        </div>
         <button type="submit" class="cta-btn">Sign up now</button>
       </div>
       <div aria-hidden="true" class="mc-hidden"><input type="text" name="b_5261624546fb04c4567b1ec64_d924d58833" tabindex="-1" value=""></div>
@@ -333,6 +341,66 @@ Last Updated: 2026-06-12
     if (wa) wa.href = "https://wa.me/?text=" + encodeURIComponent(shareText + " " + shareUrl);
     var em = document.getElementById('shareEmail');
     if (em) em.href = "mailto:?subject=" + encodeURIComponent("You have to see this: Lophi") + "&body=" + encodeURIComponent(shareText + " " + shareUrl);
+  })();
+</script>
+
+<script>
+  // Math CAPTCHA for form validation
+  (function() {
+    function generateCaptcha() {
+      const num1 = Math.floor(Math.random() * 20) + 1;
+      const num2 = Math.floor(Math.random() * 20) + 1;
+      const operators = ['+', '-'];
+      const operator = operators[Math.floor(Math.random() * operators.length)];
+      
+      let answer;
+      if (operator === '+') {
+        answer = num1 + num2;
+      } else {
+        answer = Math.max(num1, num2) - Math.min(num1, num2);
+      }
+      
+      const question = `${Math.max(num1, num2)} ${operator} ${Math.min(num1, num2)} = ?`;
+      return { question, answer };
+    }
+
+    // Initialize CAPTCHA for each form
+    const forms = document.querySelectorAll('.waitlist-form');
+    forms.forEach(form => {
+      const captcha = generateCaptcha();
+      const questionSpan = form.querySelector('.captcha-question');
+      const answerInput = form.querySelector('.captcha-answer');
+      
+      if (questionSpan && answerInput) {
+        questionSpan.textContent = captcha.question;
+        answerInput.dataset.correctAnswer = captcha.answer;
+        
+        // Clear any previous answer
+        answerInput.value = '';
+      }
+      
+      // Validate CAPTCHA before form submission
+      form.addEventListener('submit', function(e) {
+        const answerInput = form.querySelector('.captcha-answer');
+        if (answerInput) {
+          const userAnswer = parseInt(answerInput.value.trim(), 10);
+          const correctAnswer = parseInt(answerInput.dataset.correctAnswer, 10);
+          
+          if (isNaN(userAnswer) || userAnswer !== correctAnswer) {
+            e.preventDefault();
+            alert('Oops! That\'s not quite right. Please try again.');
+            
+            // Generate new CAPTCHA
+            const newCaptcha = generateCaptcha();
+            const questionSpan = form.querySelector('.captcha-question');
+            questionSpan.textContent = newCaptcha.question;
+            answerInput.dataset.correctAnswer = newCaptcha.answer;
+            answerInput.value = '';
+            answerInput.focus();
+          }
+        }
+      });
+    });
   })();
 </script>
 </body>
