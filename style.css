@@ -31,12 +31,30 @@ h1 .highlight { color: var(--lego-green); }
 .dm-dot.trail { fill: #7a9acc; filter: drop-shadow(0 0 3px rgba(122,154,204,0.6)); }
 .dm-dot.dim { fill: #aac0ff; filter: drop-shadow(0 0 4px rgba(170,192,255,0.75)); }
 .cta-wrap { width: 100%; max-width: 440px; animation: fadeUp 0.6s 0.35s ease both; }
-.cta-form { display: flex; gap: 10px; background: white; border-radius: 100px; padding: 6px 6px 6px 22px; box-shadow: 0 8px 40px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.05); }
-.cta-form input { flex: 1; border: none; outline: none; background: transparent; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; color: var(--night); }
-.cta-form input::placeholder { color: #bbb; }
+.waitlist-form { width: 100%; }
+.waitlist-form .cta-form { display: flex; flex-direction: column; gap: 12px; background: transparent; border-radius: 0; padding: 0; box-shadow: none; }
+.waitlist-form .email-row { display: flex; gap: 10px; background: white; border-radius: 100px; padding: 6px 6px 6px 22px; box-shadow: 0 8px 40px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.05); }
+.waitlist-form .email-row input { flex: 1; border: none; outline: none; background: transparent; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; color: var(--night); }
+.waitlist-form .email-row input::placeholder { color: #bbb; }
+.waitlist-form .captcha-box { background: rgba(255,255,255,0.7); border: 1px solid rgba(26,26,46,0.06); border-radius: 14px; padding: 10px 12px; box-shadow: 0 4px 14px rgba(26,26,46,0.04); }
+.waitlist-form .captcha-box label { display: block; font-size: 0.66rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(26,26,46,0.68); margin-bottom: 7px; }
+.waitlist-form .captcha-inline { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.waitlist-form .captcha-question { display: inline-flex; align-items: center; justify-content: center; padding: 9px 12px; min-height: 40px; background: rgba(255,255,255,0.7); color: var(--night); border: 1px solid rgba(26,26,46,0.08); border-radius: 10px; font-size: 0.98rem; font-weight: 800; letter-spacing: -0.04em; }
+.waitlist-form .captcha-answer { width: 92px; border: 1px solid rgba(26,26,46,0.1); border-radius: 10px; padding: 9px 10px; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; color: var(--night); background: rgba(255,255,255,0.95); outline: none; transition: border-color 0.2s ease, box-shadow 0.2s ease; }
+.waitlist-form .captcha-answer:focus { border-color: rgba(82,183,136,0.9); box-shadow: 0 0 0 3px rgba(82,183,136,0.12); }
 .cta-btn { background: var(--lego-green); color: white; border: none; border-radius: 100px; padding: 12px 24px; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.2s; white-space: nowrap; box-shadow: 0 4px 14px rgba(82,183,136,0.3); }
 .cta-btn:hover { transform: scale(1.05); box-shadow: 0 6px 20px rgba(82,183,136,0.45); }
 .cta-micro { font-size: 0.78rem; color: #999; margin-top: 10px; text-align: center; }
+@media (max-width: 768px) {
+  .cta-wrap { max-width: 100%; }
+  .waitlist-form .email-row { flex-direction: column; border-radius: 18px; padding: 10px; gap: 8px; }
+  .waitlist-form .email-row input { text-align: center; padding: 10px 0; font-size: 1rem; }
+  .waitlist-form .captcha-box { padding: 10px 12px; }
+  .waitlist-form .captcha-inline { flex-direction: column; align-items: stretch; }
+  .waitlist-form .captcha-question { justify-content: center; }
+  .waitlist-form .captcha-answer { width: 100%; }
+  .cta-btn { border-radius: 14px; padding: 15px; width: 100%; font-size: 1rem; }
+}
 .mc-hidden { position: absolute; left: -5000px; }
 .section { padding: 90px 24px; max-width: 960px; margin: 0 auto; }
 .section-tag { display: inline-block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; color: white; background: var(--lego-green); font-weight: 700; margin-bottom: 16px; padding: 4px 14px; border-radius: 100px; }
@@ -111,8 +129,6 @@ footer { background: var(--night); border-top: none; padding: 32px 40px; display
   /* SVG overlay uses % so it scales with the image automatically */
 
   .cta-wrap { max-width: 100%; }
-  .cta-form { flex-direction: column; border-radius: 18px; padding: 10px; gap: 8px; }
-  .cta-form input { text-align: center; padding: 10px 0; font-size: 1rem; }
   .cta-btn { border-radius: 14px; padding: 15px; width: 100%; font-size: 1rem; }
 
   .section { padding: 60px 18px; }
