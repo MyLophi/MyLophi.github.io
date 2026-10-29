@@ -100,7 +100,7 @@ nav { position: fixed; top: 0; width: 100%; height: var(--nav-h); z-index: 100; 
 /* ---------- 1. Hero als Produktseite ---------- */
 .hero { padding: calc(var(--nav-h) + 48px) 0 24px; }
 .hero-head { text-align: center; max-width: 900px; margin: 0 auto 44px; }
-.hero-head .eyebrow { margin-bottom: 18px; }
+.hero-sub { margin-top: 16px; font-size: 1.15rem; font-weight: 500; color: var(--ink-soft); }
 .hero-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 64px; align-items: start; }
 
 /* Foto mit Punktmatrix */
